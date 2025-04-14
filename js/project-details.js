@@ -309,7 +309,7 @@ function confirmDelete(){
         }
     }
     tasks=newTasks
-    localStorage.setItem("tasks", JSON.stringify(tasks))
+    localStorage.setItem(`tasks_${projectId}`, JSON.stringify(tasks))
     renderTasks()
     document.getElementById("deleteModal").style.display= "none"
 }
