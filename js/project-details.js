@@ -1,15 +1,17 @@
 if (!localStorage.getItem("loggedInUser")) {
     window.location.href = "login.html";
 }
+let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"))
 
 let urlParams = new URLSearchParams(window.location.search)
 let projectId = parseInt(urlParams.get("id")) || 1;
-let projects = JSON.parse(localStorage.getItem("projects")) || [];
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [
-    { id: 1, name: "Soạn thảo đề cương dự án", assignee: "Tuấn Tô", priority: "low", startDate: "2024-02-24", deadline: "2024-02-27", status: "green", category: "To do", projectId: 1 },
-    { id: 2, name: "Soạn thảo đề cương dự án", assignee: "Tuấn Tô", priority: "medium", startDate: "2024-02-24", deadline: "2024-02-27", status: "yellow", category: "To do", projectId: 1 },
-    { id: 3, name: "Soạn thảo đề cương dự án", assignee: "Tuấn Tô", priority: "high", startDate: "2024-02-24", deadline: "2024-02-27", status: "red", category: "To do", projectId: 1 },
-    { id: 4, name: "Kiểm tra tính năng giỏ hàng", assignee: "Tuấn Tô", priority: "medium", startDate: "2025-04-02", deadline: "2025-04-05", status: "yellow", category: "In Progress", projectId: 1 }
+
+let projects = JSON.parse(localStorage.getItem(`projects_${loggedInUser.id}`)) || [];
+let tasks = JSON.parse(localStorage.getItem(`tasks_${projectId}`)) || [
+    { id: 1, name: "Soạn thảo đề cương dự án", assignee: "Tuấn Tô", priority: "low", startDate: "2025-04-14", deadline: "2025-04-27", status: "green", category: "To do", projectId: 1 },
+    { id: 2, name: "Soạn thảo đề cương dự án", assignee: "Tuấn Tô", priority: "medium", startDate: "2025-04-14", deadline: "2025-04-27", status: "yellow", category: "To do", projectId: 1 },
+    { id: 3, name: "Soạn thảo đề cương dự án", assignee: "Tuấn Tô", priority: "high", startDate: "2025-04-14", deadline: "2025-04-27", status: "red", category: "To do", projectId: 1 },
+    { id: 4, name: "Kiểm tra tính năng giỏ hàng", assignee: "Tuấn Tô", priority: "medium", startDate: "2025-04-14", deadline: "2025-04-27", status: "yellow", category: "In Progress", projectId: 1 }
 ]
 let projectFound= false
 let project= {}
@@ -45,7 +47,7 @@ function renderTasks() {
         let subTable = document.getElementById(subTableId)
         subTable.innerHTML =""
         for (let j = 0; j < tasks.length; j++) {
-            if (tasks[j].projectId === projectId && tasks[j].category === category) { 
+            if (tasks[j].projectId === projectId && tasks[j].category === category){ 
                 let task = tasks[j];
                 let priorityText= ""
                 if(task.priority==="low"){
@@ -252,7 +254,7 @@ function addMission(event){
     }else {
         tasks.push(newTask)
     }
-    localStorage.setItem("tasks", JSON.stringify(tasks))
+    localStorage.setItem(`tasks_${projectId}`, JSON.stringify(tasks))
     renderTasks()
     document.getElementById("taskForm").reset()
     document.getElementById("taskForm").removeAttribute("data-taskId")
