@@ -1,0 +1,444 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #F8F9FA;
+    margin: 0;
+    color: #212529;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+h1 {
+    font-size: 20px;
+    font-weight: 400;
+}
+h2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.navbar {
+    background-color: #212529;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1296px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.nav-links li:nth-child(2) a {
+    opacity: 0.5;
+}
+
+.header-container {
+    margin: 30px auto;
+    max-width: 1296px;
+}
+.main-container {
+    background-color: white;
+    padding: 25px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    border-radius: 6px;
+    max-width: 1296px;
+}
+.main-container h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.project-header h2 {
+    font-size: 28px;
+    margin: 0;
+}
+.project-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.header-left {
+    display: flex;
+    justify-content: end;
+    gap: 35px;
+}
+.header-left select {
+    padding: 8px 25px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+}
+.form-control {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    width: 210px;
+}
+.member {
+    display: flex;
+    align-items: center;
+    gap: 195px;
+}
+.member h3 {
+    margin: 0;
+    font-size: 20px;
+}
+.newMember {
+    padding: 6px 12px;
+    color: #6C757D;
+    background-color: #F8F9FA;
+    border-radius: 4px;
+    border: 1px solid #6C757D;
+}
+.member-list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.member-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.member-avatar {
+    min-width: 45px;
+    height: 45px;
+    background-color: #0D6EFD;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 16px;
+}
+.member-avatar-2 {
+    min-width: 45px;
+    height: 45px;
+    background-color: #8A2BE2;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 16px;
+}
+.more {
+    min-width: 45px;
+    height: 45px;
+    background-color: #E2E3E5;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 16px;
+}
+.member-info p {
+    margin: 0;
+    font-size: 15px;
+}
+.p {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+.p p {
+    margin: 0;
+    font-size: 16px;
+}
+.role-name {
+    font-weight: bold;
+}
+.role {
+    color: #6c757d;
+}
+
+/* Nút bấm */
+.btn-primary {
+    background-color: #0D6EFD;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 15px;
+}
+.btn-edit {
+    background-color: #FFC107;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+.btn-delete {
+    background-color: #DC3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.error-mess {
+    color: red;
+    font-size: 13px;
+    margin-top: 4px;
+    display: block;
+}
+.input-error {
+    border: 1px solid red !important;
+}
+
+/* Bảng chính */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+}
+.table thead {
+    background-color: #F8F9FA;
+    color: black;
+}
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+}
+.table th:last-child {
+    border-right: none;
+}
+.table th:nth-child(1), .sub-table td:nth-child(1) { width: 22%; }
+.table th:nth-child(2), .sub-table td:nth-child(2) { width: 15%; }
+.table th:nth-child(3), .sub-table td:nth-child(3) { width: 12%; }
+.table th:nth-child(4), .sub-table td:nth-child(4) { width: 12%; }
+.table th:nth-child(5), .sub-table td:nth-child(5) { width: 12%; }
+.table th:nth-child(6), .sub-table td:nth-child(6) { width: 12%; }
+.table th:nth-child(7), .sub-table td:nth-child(7) { width: 15%; }
+
+/* Phần trạng thái */
+.task-status {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.task-status td {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-right: none;
+}
+details, summary {
+    margin: 0;
+    padding: 0;
+}
+summary {
+    padding: 12px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Bảng con */
+.sub-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    margin: 0;
+}
+.sub-table tr {
+    border-bottom: 1px solid #ddd;
+}
+.sub-table tr:last-child {
+    border-bottom: none;
+}
+.sub-table th, .sub-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    font-size: 15px;
+}
+.sub-table td:last-child {
+    border-right: none;
+}
+
+/* Trạng thái & ưu tiên */
+.priority, .status {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 14px;
+}
+.priority.low {
+    background-color: #0DCAF0;
+    color: white;
+}
+.priority.high {
+    background-color: #DC3545;
+    color: white;
+}
+.priority.medium {
+    background-color: #FFA500;
+    color: white;
+}
+.status.green {
+    background-color: #198754;
+    color: white;
+}
+.status.yellow {
+    background-color: #FFA500;
+    color: white;
+}
+.status.red {
+    background-color: #DC3545;
+    color: white;
+}
+.status.blue {
+    background-color: #0D6EFD;
+    color: white;
+}
+.colorText {
+    color: #0D6EFD;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 450px;
+    text-align: left;
+}
+.modal-actions {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+    margin-top: 25px;
+}
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.btn-cancel {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* Modal Xác Nhận Xóa */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.close-button {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+.btn-secondary {
+    background-color: #6C757D;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.btn-danger {
+    background-color: #DC3545;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #212529;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    font-size: 14px;
+}

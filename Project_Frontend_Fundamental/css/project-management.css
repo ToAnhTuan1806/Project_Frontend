@@ -1,0 +1,272 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #F8F9FA;
+    margin: 0;
+    padding: 0;
+    padding-top: 80px;
+    padding-bottom: 70px;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 400;
+}
+h2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+h3 {
+    margin-bottom: 8px;
+}
+
+.navbar {
+    background-color: #212529;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 60px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1296px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+.nav-links li:nth-child(2) a {
+    opacity: 0.5;
+}
+
+
+.main-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1296px;
+    margin-top: 80px;
+    margin-bottom: 70px;
+}
+.project-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+.project-header-actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+.search-container {
+    margin-left: auto;
+}
+.form-control {
+    width: 433px;
+    max-width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Nút chung */
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.btn-primary {
+    background-color: #0D6EFD;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 24px;
+    cursor: pointer;
+}
+.btn-secondary {
+    background-color: #6C757D;
+    color: white;
+}
+.btn-danger {
+    background-color: #DC3545;
+    color: white;
+}
+.btn-warning {
+    background-color: #FFC107;
+    color: black;
+}
+.btn-sm {
+    padding: 8px 14px; 
+    font-size: 14px; 
+    margin-right: 8px; 
+}
+.table td.action .btn-sm:last-child {
+    margin-right: 0;
+}
+
+/* Bảng */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+.table th.id,
+.table td.id,
+.table th.action,
+.table td.action {
+    border-top: 1px solid #edf2f7;
+    border-bottom: 1px solid #edf2f7;
+    border-left: 1px solid #DEE2E6;
+    border-right: 1px solid #DEE2E6;
+    text-align: center;
+    padding: 12px;
+}
+.table td.project,
+.table th.project {
+    border-top: 1px solid #edf2f7;
+    border-bottom: 1px solid #edf2f7;
+    border-left: 1px solid #DEE2E6;
+    border-right: 1px solid #DEE2E6;
+    text-align: left;
+    width: 70%;
+    padding: 12px;
+}
+.table th {
+    background-color: #212529;
+    color: white;
+}
+td.name {
+    padding-left: 16px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+/* Phân trang */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -40px;
+    margin-bottom: 70px;
+    max-width: 1296px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pagination-container button {
+    margin: 0;
+    padding: 7px 14px;
+    background-color: white;
+    border: 1px solid #DEE2E6;
+    cursor: pointer;
+}
+.pagination-container button.nav-btn:first-child {
+    border-radius: 4px 0 0 4px;
+}
+.pagination-container button.nav-btn:last-child {
+    border-radius: 0 4px 4px 0;
+}
+.pagination-container button.active {
+    background-color: #007bff;
+    color: white;
+}
+.pagination-container .nav-btn {
+    font-size: 18px; 
+    font-weight: bold;
+}
+.pagination-container .nav-btn.disabled {
+    background-color: #f8f9fa;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 40%;
+    position: relative;
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.close-button {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+.modal-content label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.modal-content textarea {
+    height: 100px;
+}
+#projectNameError, #projectDescError {
+    color: red;
+    font-size: 14px;
+    display: block;
+    margin-top: 2px;
+    min-height: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #212529;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}

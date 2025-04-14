@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Heebo:wght@100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Đăng ký</h2>
+        <form id="register-form" novalidate>
+            <div class="form-group">
+                <input type="text" id="fullname" placeholder="Họ và tên">
+                <p class="error" id="error-fullname">Họ và tên không được để trống</p>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Địa chỉ email">
+                <p class="error" id="error-email">Email không được để trống</p>
+                <p class="error" id="error-format">Email không đúng định dạng! Thử lại</p>
+                <p class="error" id="error-duplication">Email đã được sử dụng</p>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Mật khẩu">
+                <p class="error" id="error-password">Mật khẩu không được để trống</p>
+                <p class="error" id="error-length">Mật khẩu phải có ít nhất 8 ký tự</p>
+            </div>
+            <div class="form-group">
+                <input type="password" id="confirm-password" placeholder="Xác nhận mật khẩu">
+                <p class="error" id="error-confirm-password">Mật khẩu xác nhận không được để trống</p>
+                <p class="error" id="error-confirm-mismatch">Mật khẩu xác nhận không khớp</p>
+            </div>
+            <button type="submit">Đăng ký</button>
+            <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+        </form>
+    </div>
+
+    <script src="../js/register.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
