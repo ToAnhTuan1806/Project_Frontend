@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Heebo:wght@100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/project-details.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>Quản Lý Dự Án</h1>
+            <ul class="nav-links">
+                <li><a href="#">Dự Án</a></li>
+                <li><a href="#">Nhiệm Vụ của Tôi</a></li>
+                <li><a href="#">Đăng Xuất</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <main class="header-container">
+        <div class="project-header">
+            <h2 id="projectName">Tên dự án</h2>
+            <div class="member">
+                <h3>Thành viên</h3>
+                <button class="newMember">+ Thêm thành viên</button>
+            </div>
+        </div>
+        <div class="p">
+            <p id="projectDesc">Mô tả dự án</p>
+            <div class="member-list">
+                <div class="member-item">
+                    <span class="member-avatar">TT</span>
+                    <div class="member-info">
+                        <p class="role-name">Tuấn Tô</p>
+                        <p class="role">Project owner</p>
+                    </div>
+                </div>
+                <div class="member-item">
+                    <span class="member-avatar-2">AT</span>
+                    <div class="member-info">
+                        <p class="role-name">Anh Tuấn</p>
+                        <p class="role">Frontend developer</p>
+                    </div>
+                </div>
+                <span class="more">...</span>
+            </div>
+        </div>
+
+        <div class="project-header-actions">
+            <button id="addMissionBtn" class="btn-primary">+ Thêm nhiệm vụ</button>
+            <div class="header-left">
+                <select>
+                    <option value="" selected disabled hidden>Sắp xếp theo</option>
+                    <option value="priority">Ưu tiên</option>
+                    <option value="progress">Tiến độ</option>
+                </select>
+                <input type="text" class="form-control" placeholder="Tìm kiếm nhiệm vụ">
+            </div>
+        </div>
+
+        <div class="main-container">
+            <h3>Danh Sách Nhiệm Vụ</h3>
+            <table class="table">
+                <thead>
+                    <tr class="list">
+                        <th>Tên Nhiệm Vụ</th>
+                        <th>Người Phụ Trách</th>
+                        <th>Ưu Tiên</th>
+                        <th>Ngày Bắt Đầu</th>
+                        <th>Hạn Chót</th>
+                        <th>Tiến Độ</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="task-status">
+                        <td colspan="7" class="status-header">
+                            <details data-category="To do" open>
+                                <summary>To do</summary>
+                                <table class="sub-table"id="subTodo">
+
+                                </table>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="task-status">
+                        <td colspan="7" class="status-header">
+                            <details data-category="In Progress" open>
+                                <summary>In Progress</summary>
+                                <table class="sub-table" id="subInProgress">
+
+                                </table>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="task-status">
+                        <td colspan="7" class="status-header">
+                            <details data-category="Pending" open>
+                                <summary>Pending</summary>
+                                <table class="sub-table" id="subPending">
+
+                                </table>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr class="task-status">
+                        <td colspan="7" class="status-header">
+                            <details data-category="Done" open>
+                                <summary>Done</summary>
+                                <table class="sub-table" id="subDone">
+
+                                </table>
+                            </details>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        © 2025 Quản Lý Dự Án Nhóm. All rights reserved.
+    </footer>
+
+    <div id="taskModal" class="modal">
+        <div id="taskError" class="error"></div>
+        <div class="modal-content">
+            <h3 id="taskModalTitle">Thêm Nhiệm Vụ</h3>
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskName">Tên Nhiệm Vụ</label>
+                    <input type="text" id="taskName" name="taskName">
+                    <span id="error-taskName" class="error-mess"></span>
+                </div>
+                <div class="form-group">
+                    <label for="assignee">Người phụ trách</label>
+                    <select id="assignee" name="assignee">
+                        <option value="" selected disabled hidden>Chọn người phụ trách</option>
+                        <option value="Tuấn Tô">Tuấn Tô</option>
+                        <option value="ABC">ABC</option>
+                    </select>
+                    <span id="error-assignee" class="error-mess"></span>
+                </div>
+                <div class="form-group">
+                    <label for="taskStatus">Trạng thái</label>
+                    <select id="taskStatus" name="taskStatus">
+                        <option value="" selected disabled hidden>Chọn trạng thái nhiệm vụ</option>
+                        <option value="To do">To do</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Done">Done</option>
+                    </select>
+                    <span id="error-taskStatus" class="error-mess"></span>
+                </div>
+                <div class="form-group">
+                    <label for="startDate">Ngày bắt đầu</label>
+                    <input type="date" id="startDate" name="startDate">
+                    <span id="error-startDate" class="error-mess"></span>
+                </div>
+                <div class="form-group">
+                    <label for="deadline">Hạn cuối</label>
+                    <input type="date" id="deadline" name="deadline">
+                    <span id="error-deadline" class="error-mess"></span>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Độ ưu tiên</label>
+                    <select id="priority" name="priority">
+                        <option value=""selected disabled hidden>Chọn độ ưu tiên</option>
+                        <option value="low">Thấp</option>
+                        <option value="medium">Trung bình</option>
+                        <option value="high">Cao</option>
+                    </select>
+                    <span id="error-priority" class="error-mess"></span>
+                </div>
+                <div class="form-group">
+                    <label for="progress">Tiến độ</label>
+                    <select id="progress" name="progress">
+                        <option value="" selected disabled hidden>Chọn tiến độ</option>
+                        <option value="green">Đúng tiến độ</option>
+                        <option value="yellow">Có rủi ro</option>
+                        <option value="red">Trễ hạn</option>
+                        <option value="blue">Chưa bắt đầu</option>
+                    </select>
+                    <span id="error-progress" class="error-mess"></span>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" id="saveTaskBtn" class="btn-primary">Lưu</button>
+                    <button type="button" id="cancelTaskBtn" class="btn-cancel">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Xác Nhận Xóa</h3>
+                <span class="close-button" onclick="closeDeleteModal()">×</span>
+            </div>
+            <p>Bạn có chắc muốn xóa nhiệm vụ này?</p>
+            <div class="modal-footer">
+                <button id="cancelDelete" class="btn btn-secondary">Hủy</button>
+                <button id="confirmDelete" class="btn btn-danger">Xóa</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/project-details.js"></script>
+</body>
+
+</html>

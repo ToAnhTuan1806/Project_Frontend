@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/manage-personal-tasks.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>Quản Lý Dự Án</h1>
+            <ul class="nav-links">
+                <li><a href="#">Dự Án</a></li>
+                <li><a href="#">Nhiệm Vụ</a></li>
+                <li><a href="#">Đăng Xuất</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header-container">
+        <h2>Quản lý nhiệm vụ</h2>
+        <div class="header-actions">
+            <select class="sort-select">
+                <option value="">Sắp xếp theo</option>
+                <option value="priority">Độ ưu tiên</option>
+                <option value="deadline">Hạn chót</option>
+                <option value="status">Trạng thái</option>
+            </select>
+            <input type="text" class="form-control" placeholder="Tìm kiếm nhiệm vụ">
+        </div>
+    </div>
+
+    <div class="main-container">
+        <h3>Danh Sách Nhiệm Vụ</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tên Nhiệm Vụ</th>
+                    <th>Độ ưu tiên</th>
+                    <th>Trạng thái</th>
+                    <th>Ngày Bắt Đầu</th>
+                    <th>Hạn Chót</th>
+                    <th>Tiến Độ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="6">
+                        <details open>
+                            <summary>Xây dựng website thương mại điện tử</summary>
+                            <table class="sub-table">
+                                <tr>
+                                    <td>Soạn thảo đề cương dự án</td>
+                                    <td><span class="priority low">Thấp</span></td>
+                                    <td><span class="status yellow">In progress</span></td>
+                                    <td>02-24</td>
+                                    <td>02-27</td>
+                                    <td>
+                                        <button class="btn-progress">Đứng tiến độ</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Soạn thảo đề cương dự án</td>
+                                    <td><span class="priority medium">Trung bình</span></td>
+                                    <td><span class="status yellow">In progress</span></td>
+                                    <td>02-24</td>
+                                    <td>02-27</td>
+                                    <td>
+                                        <button class="btn-risk">Cờ rủi ro</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Soạn thảo đề cương dự án</td>
+                                    <td><span class="priority high">Cao</span></td>
+                                    <td><span class="status red">Pending</span></td>
+                                    <td>02-24</td>
+                                    <td>02-27</td>
+                                    <td>
+                                        <button class="btn-delay">Trì hoãn</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </details>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td colspan="6">
+                        <details open>
+                            <summary>Phát triển ứng dụng di động</summary>
+                            <table class="sub-table">
+                                <tr>
+                                    <td>Lên lịch họp kickoff</td>
+                                    <td><span class="priority low">Thấp</span></td>
+                                    <td><span class="status yellow">In progress</span></td>
+                                    <td>02-24</td>
+                                    <td>02-27</td>
+                                    <td>
+                                        <button class="btn-risk">Cờ rủi ro</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <details open>
+                            <summary>Quản lý dữ liệu khách hàng</summary>
+                            <table class="sub-table">
+                               
+                            </table>
+                        </details>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="footer">
+        © 2025 Quản Lý Dự Án Nhóm. All rights reserved.
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Heebo:wght@100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/project-management.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>Quản Lý Dự Án</h1>
+            <ul class="nav-links">
+                <li><a href="#">Dự Án</a></li>
+                <li><a href="#">Nhiệm Vụ của Tôi</a></li>
+                <li><a href="#" id="logoutBtn">Đăng Xuất</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="project-header">
+            <h2>Quản Lý Dự Án Nhóm</h2>
+            <div class="project-header-actions">
+                <button id="addProjectBtn" class="btn-primary">+ Thêm Dự Án</button>
+                <div class="search-container">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm dự án..." id="searchInput">
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3>Danh Sách Dự Án</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="id">ID</th>
+                        <th class="project">Tên Dự Án</th>
+                        <th class="action">Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody id="projectTable"></tbody>
+            </table>
+        </div>
+    </main>
+    <div id="pagination" class="pagination-container"></div>
+
+    <footer class="footer">
+        © 2025 Team Management. All rights reserved.
+    </footer>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Thêm/Sửa Dự Án</h2>
+                <span class="close-button" onclick="closeModal()">×</span>
+            </div>
+            <form id="projectForm">
+                <input type="hidden" id="projectId">
+                <label for="projectName">Tên Dự Án</label>
+                <input type="text" id="projectName" placeholder="Nhập tên dự án">
+                <span id="projectNameError"></span>
+                <label for="projectDesc">Mô tả dự án</label>
+                <textarea id="projectDesc" placeholder="Nhập mô tả dự án"></textarea>
+                <span id="projectDescError"></span>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Hủy</button>
+                    <button type="button" id="saveProjectBtn" class="btn btn-primary">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Xác Nhận Xóa</h3>
+                <span class="close-button" onclick="closeDeleteModal()">×</span>
+            </div>
+            <p>Bạn có chắc muốn xóa dự án này?</p>
+            <div class="modal-footer">
+                <button id="cancelDelete" class="btn btn-secondary">Hủy</button>
+                <button id="confirmDelete" class="btn btn-danger">Xóa</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/project-management.js"></script>
+</body>
+
+</html>

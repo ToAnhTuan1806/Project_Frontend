@@ -1,0 +1,88 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    background-color: #f4f4f4;
+    color: rgb(35, 33, 33);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#register-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 52px;
+    margin-bottom: 32px;
+    font-weight: 600;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-left: 20px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+input {
+    width: 90%;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    margin-bottom: 5px;
+}
+
+input.error-input {
+    border: 1px solid red;
+}
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+    display: none;
+    text-align: left;
+    margin-left: 20px;
+}
+button {
+    width: 96%;
+    margin-top: 25px;
+    background-color: #0D6EFD;
+    border: none;
+    padding: 16px;
+    border-radius: 9px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+p {
+    margin-top: 20px;
+    color: #6b6969;
+    font-size: 14px;
+}
+a {
+    color: #0D6EFD;
+    text-decoration: none;
+    font-weight: 600;
+}
